@@ -1,9 +1,12 @@
 from stats import num_words_text, num_chars_in_text, sorted_dict_chars
+import sys
 
-__frank_relative_filepath__ = "books/frankenstein.txt"
 
 def main():
-    book_report(__frank_relative_filepath__)
+    if len(sys) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    book_report(sys.argv[1])
 
 
 def get_book_text(filepath):
