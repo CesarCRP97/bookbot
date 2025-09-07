@@ -1,4 +1,4 @@
-from stats import get_book_text, num_words_text, num_chars_in_text
+from stats import num_words_text, num_chars_in_text
 
 def main():
     text = get_book_text("books/frankenstein.txt")
@@ -8,6 +8,10 @@ def main():
     print(char_dict)
 
 
-
+def get_book_text(filepath):
+    with open(filepath) as f:
+        file_contents = f.read()
+        return file_contents
+    
 
 main()
